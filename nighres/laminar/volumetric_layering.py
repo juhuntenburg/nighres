@@ -124,6 +124,10 @@ def volumetric_layering(inner_levelset, outer_levelset,
     lamination.setNumberOfLayers(n_layers)
     lamination.setTopologyLUTdirectory(topology_lut_dir)
 
+    lamination.setLayeringMethod("distance-preserving")
+    lamination.setCurvatureApproximationScale(5)
+    lamination.setPresmoothCorticalSurfaces(True)
+
     # execute class
     try:
         lamination.execute()
